@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>kalkulator dan membuat teks berubah warna</title>
+
+    <script>
+        function calculate() {
+            var box1 = document.getElementById("Box1").value;
+            var box2 = document.getElementById("Box2").value;
+            var result = document.getElementById("result");
+            var myResult = Number(box1) * Number(box2) ; result.value = myResult;
+        }
+
+        var a = 10;
+        var aku = "wisnu";
+        window.alert(a);
+        window.alert(aku);
+    </script>
+</head>
+<body>
+    
+    <p id="demo">demo</p>
+
+    <button type="button" onclick=
+            "document.getElementById('demo')
+        .style.color = 'red'">Red Text</button>
+
+    <button type="button" onclick=
+            "document.getElementById('demo')
+        .style.color = 'blue'">Blue Text</button>
+
+
+    <p id="hilang">aku dapat menghilang</p>
+
+    <button type="button" onclick=
+            "document.getElementById('hilang')
+        .style.display = 'none'">Menghilang</button>
+
+    <button type="button" onclick=
+            "document.getElementById('hilang')
+        .style.display = 'block'">Muncul</button>
+
+    <table>
+        <tr>
+            <th>Box 1</th>
+            <th></th>
+            <th>Box 2</th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td><input id="Box1" type="text" oninput="calculate()" /></td>
+            <td></td>
+            <td><input id="Box2" type="text" oninput="calculate()" /></td>
+            <td></td>
+            <td><input id="result" /></td>
+        </tr>
+    </table>
+
+</body>
+</html>

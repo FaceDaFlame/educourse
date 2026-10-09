@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="cekStatus()">Cek Status</button>
+
+</body>
+<script>
+
+    function sapaSekolah(nama) {
+        console.log("Halo "+nama+" , SELAMAT BELAJAR DI SEKOLAH KITA");
+
+    }
+
+    sapaSekolah("Budi");
+    sapaSekolah("Ares");
+    sapaSekolah("Citra");
+    sapaSekolah("Dewi");
+    sapaSekolah("Eko");
+    sapaSekolah("Fina");
+    sapaSekolah("Gita");
+    sapaSekolah("Hana");
+    sapaSekolah("Iwan");
+    sapaSekolah("Juli");
+
+    function namaPesanan (nama, kopi, rasa) {
+        console.log(" Halo " +nama+ " memesan kopi " +kopi+ " rasanya " +rasa+ ".");
+    }
+
+    namaPesanan("Ares", "Espresso", "pahit");
+    namaPesanan("Theo", "Aren Latte", "manis");
+
+    function cekStatus() {
+        alert ("Status: Aktif");
+    }
+
+    function perkalian (a, b) {
+        return a * b;
+    }
+
+    let total = perkalian(5, 10);
+    console.log("Total perkalian: " + total);
+
+</script>
+</html>

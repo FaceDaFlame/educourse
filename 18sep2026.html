@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JAVASCRIPT ARRAY METHODS MODERN -->
+     <!-- (forEach, find, some, every, includes) -->
+      <!-- forEach : panggil satu per satu (ex. absen) -->
+       <!-- find : mencari data -->
+        <!-- some : pengecekan minimal satu ada (true/false)-->
+         <!-- every : pengecekan seluruh Anggota (true/false) -->
+          <!-- includes : cek isi kantong (true/false) -->
+
+<script>
+
+
+    //perulangan cara lama
+    // const buah =["Apel", "Mangga", "Pisang"]
+
+    // for (let i = 0; i < buah.length; i++) {
+    //     console.log("cara lama:", buah[i]);
+    // }
+
+    // //perulangan cara baru
+    // buah.forEach((item ) => {
+    //     console.log("cara modern:", item);
+    // })
+
+    // const user = ["Budi", "Siti", "Sigit",];
+
+    // user.forEach((nama) => {
+    //     console.log(nama + ", email pengingat sudah dikirim");
+    // })
+
+    // //INCLUDES
+    // const adaPisang = buah.includes("Pisang");
+    // console.log("Apakah ada Pisang? ", adaPisang);
+
+    // const roles = ["admin", "super admin", "editor"]
+
+    // const adaEditor = roles.includes("editor");
+    // console.log("Apakah ada editor? ", adaEditor);
+
+    // const angka = [10, 20, 30, 40, 50]
+
+    // //FIND
+    // const cariDiatas20 = angka.find((n) => n > 20);
+    // console.log("FInd (pertama ketemunya):", cariDiatas20);
+
+    // //SOME
+    // const adaAngkaGanjil = angka.some((n) => n % 2 !==0);
+    // console.log("Some (Ada Ganjil?):", adaAngkaGanjil);
+
+    // //EVERY
+    // const semuaDiatas5 = angka.every((n) => n > 5);
+    // console.log("Every (Semua > 5):", semuaDiatas5);
+
+    // const umur = [18, 22, 25, 17]
+
+    // const umurBerusia18 = umur.every((n) => n => 18);
+    // console.log("Every (Semua >= 18):", umurBerusia18);
+
+    // const stock = [15, 0, 8, 20]
+
+    // const adaBarangStoknya0 = stock.some((n) => n === 0);
+    // console.log("Some (Ada Barang Stocknya 0?):", adaBarangStoknya0);
+
+    // const produk = [
+    //     {id:1, nama:"HP"},
+    //     {id:2, nama:"Laptop"}
+    // ]
+
+    // const cariProduk = produk.find((item) => item.id === 2);
+    // console.log("Produk yang dicari:", cariProduk)
+
+    //soal : gunakan teknik destructuring untuk mengambil property nama dan kelas. tampilkan hasil konsol "arez berada di kelas 10 rpl"
+
+    const siswa = {
+        nama: "arez",
+        kelas: "10 rpl"
+    }
+
+    const { nama, kelas } = siswa;
+    console.log(nama + " berada di kelas " + kelas);
+
+    //soal 2 : gunakan teknik array destructuring. ambil elemen pertama dan kedua dari arrah buah. simpan variable bernama buahPertama dan buahKedua
+
+    const buah = ["Apel", "Pisang", "Pepaya"]
+    const [buahPertama, buahKedua, buahKetiga] = buah;
+
+    console.log("buah pertama", buahPertama);
+    console.log("buah kedua", buahKedua);
+
+    
+</script>
+    
+</body>
+</html>

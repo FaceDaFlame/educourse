@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard JavaScript - Modern Learning</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    padding: 60px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
+  }
+
+  header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .card-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    flex: 1;
+  }
+
+  .card-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 4px;
+  }
+
+  .card-date {
+    font-size: 13px;
+    color: #718096;
+    font-weight: 400;
+  }
+
+  .card-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    background: #f7fafc;
+    color: #667eea;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .card-link:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  .card-link::after {
+    content: '→';
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .card-link:hover::after {
+    transform: translateX(4px);
+  }
+
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 36px;
+    }
+
+    .stats {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>JavaScript Learning Path</h1>
+    <p>Perjalanan pembelajaran JavaScript dari dasar hingga modern</p>
+  </header>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">1</div>
+        <div class="card-title">
+          <h2>Method & Array</h2>
+          <p class="card-date">14 Agustus 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">String Methods</span>
+        <span class="tag">Array Methods</span>
+        <span class="tag">Data Manipulation</span>
+      </div>
+      <p class="card-description">
+        Mempelajari method string seperti toUpperCase(), toLowerCase(), dan trim() untuk manipulasi teks. 
+        Serta method array untuk menambah/menghapus data (push, pop, unshift, shift, splice) dan mencari data (includes, find).
+      </p>
+      <a href="14agu2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">2</div>
+        <div class="card-title">
+          <h2>Object & Class</h2>
+          <p class="card-date">21 Agustus 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Object</span>
+        <span class="tag">Class</span>
+        <span class="tag">OOP</span>
+      </div>
+      <p class="card-description">
+        Memahami konsep Object dan Class dalam JavaScript. Belajar membuat objek dengan properties dan methods, 
+        serta implementasi class dengan constructor dan method untuk membuat objek yang lebih terstruktur.
+      </p>
+      <a href="21agu2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">3</div>
+        <div class="card-title">
+          <h2>Error Handling</h2>
+          <p class="card-date">28 Agustus 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Try-Catch</span>
+        <span class="tag">Error</span>
+        <span class="tag">Finally</span>
+      </div>
+      <p class="card-description">
+        Mengelola error dengan try-catch-finally untuk membuat aplikasi yang lebih robust. 
+        Belajar menangkap dan menampilkan error dengan baik, serta memahami kapan menggunakan throw Error.
+      </p>
+      <a href="28agu2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">4</div>
+        <div class="card-title">
+          <h2>Class & Error Handling</h2>
+          <p class="card-date">4 September 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Class</span>
+        <span class="tag">Switch Case</span>
+        <span class="tag">Validation</span>
+      </div>
+      <p class="card-description">
+        Kombinasi Class dengan error handling untuk membuat aplikasi yang lebih kompleks. 
+        Implementasi class Siswa dengan method getGrade menggunakan switch case dan validasi data dengan try-catch.
+      </p>
+      <a href="04sep2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">5</div>
+        <div class="card-title">
+          <h2>Destructuring & Operator</h2>
+          <p class="card-date">11-18 September 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Destructuring</span>
+        <span class="tag">Spread</span>
+        <span class="tag">Rest</span>
+      </div>
+      <p class="card-description">
+        Fitur modern JavaScript untuk manipulasi data lebih efisien. 
+        Destructuring untuk extract nilai dari object/array, Spread operator untuk menggabungkan data, dan Rest operator untuk menangkap sisa data.
+      </p>
+      <a href="11sep_18sep2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">6</div>
+        <div class="card-title">
+          <h2>Array Methods Modern</h2>
+          <p class="card-date">18 September 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forEach</span>
+        <span class="tag">find</span>
+        <span class="tag">some/every</span>
+      </div>
+      <p class="card-description">
+        Method array modern untuk iterasi dan pencarian data yang lebih elegan. 
+        Belajar forEach untuk looping, find untuk mencari data, includes untuk cek keberadaan data, some dan every untuk validasi array.
+      </p>
+      <a href="18sep2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">7</div>
+        <div class="card-title">
+          <h2>Project: To-Do List</h2>
+          <p class="card-date">25 September 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">DOM</span>
+        <span class="tag">Events</span>
+        <span class="tag">Project</span>
+      </div>
+      <p class="card-description">
+        Membuat aplikasi To-Do List sederhana dengan task board dua kolom (Belum Selesai & Selesai). 
+        Implementasi DOM manipulation, event handling, dan styling CSS untuk UI yang menarik.
+      </p>
+      <a href="25sep2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">8</div>
+        <div class="card-title">
+          <h2>jQuery Interactive Web</h2>
+          <p class="card-date">2 Oktober 2026</p>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">jQuery</span>
+        <span class="tag">Animation</span>
+        <span class="tag">DOM</span>
+      </div>
+      <p class="card-description">
+        Pengenalan jQuery untuk manipulasi DOM yang lebih mudah dan cepat. 
+        Belajar selector jQuery, event handling, animasi, dan efek visual untuk membuat website yang lebih interaktif.
+      </p>
+      <a href="2okt2026.html" class="card-link">Lihat Materi</a>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

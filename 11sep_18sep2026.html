@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //Data Objek Utama
+        // const siswa = {
+        //     nama: "Arez",
+        //     kelas: "12 RPL"
+        // };
+
+        // //Cara Lama
+        // const namaLama = siswa.nama;
+        // const kelasLama = siswa.kelas;
+        // console.log("Cara Lama: ", namaLama, kelasLama);
+
+        // //Cara Baru
+        // const siswaBaru = { nama, kelas } = siswa;
+        // console.log("Cara Baru: ", nama, kelas);
+
+        // //challenge
+        // const wallet = {
+        //     user: "Budi",
+        //     saldo: "5000000",
+        // };
+
+        // const { user, saldo } = wallet;
+        // console.log( user , " memiliki saldo sebesar ", saldo);
+
+        // Spread Operator
+        // const timA = ["Andi", "Budi",];
+        // const timB = ["Sigit", "Raffa",];
+        // const timGabungan = [...timA, ...timB];
+        // console.log("Tim Gabungan: ", timGabungan);
+
+        // //challenge
+        // const tim1 = ["Ahmad", "Budi", "WIsnu", "Fardan"];
+        // const tim2 = ["Citra", "Dewi", "Arez", "Zaghi"];
+        // const tim3 = ["Eka", "Fajar", "Galih", "Hendra"];
+        // const timGabungan2 = [...tim1, ...tim2, ...tim3];
+        // console.log("Tim Gabungan 2: ", timGabungan2);
+
+        // //Rest Operator
+        // const [ketua, wakil, ...anggota] = timGabungan2;
+        // console.log("Ketua: ", ketua);
+        // console.log("Wakil: ", wakil);
+        // console.log("Anggota: ", anggota);
+
+        // //daftar pemain
+        // const anggota = ["Coach Justin","Ernando Ari","Arez","Tegar","Aldrich"];
+
+        // //mengambil pelatih kiper dan cadangan
+        // const [pelatih, kiper, ...cadangan] = anggota;
+
+        // console.log("pelatih :", pelatih);
+        // console.log("kiper utama:", kiper);
+        // console.log("pemain cadangan :", cadangan);
+
+        // const juara = ["Arez", "Budi", "Citra", "Dewi", "Eka","Fardan"];
+
+        // const [juara1, juara2, juara3, ...juaraLainnya] = juara;
+
+        // console.log("Juara 1: ", juara1);
+        // console.log("Juara 2: ", juara2);
+        // console.log("Juara 3: ", juara3);
+        // console.log("Juara favorit: ", juaraLainnya.length,"orang");
+
+        const kelas = ["Arez", "Budi", "Zaghi", "Nisa", "Fardan", "Afnan", "Ashraf"]
+
+        const [ketua, wakil, ...anggota] = kelas;
+
+        console.log("Ketua Kelas: ", ketua);
+        console.log("Wakil Kelas: ", wakil);
+        console.log("Anggota Kelas: ", anggota);
+        console.log("Jumlah Kelas: ", kelas.length, "orang");
+
+        
+        
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: darkgoldenrod;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #333333;
+            margin-bottom: 10px;
+
+        }
+
+        p {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 10px;
+            
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            padding: 12px;
+            color: #333333;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        #btnSukses {background-color: #20bb0f;}
+        #btnSukses:hover {background-color: white;}
+
+        #btnGagal {background-color: red;}
+        #btnGagal:hover {background-color: white;}
+
+        #btnInfo {background-color: blue;}
+        #btnInfo:hover {background-color: white;}
+
+        .toast-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px 20px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: none; /*menyembunyikan di awal*/
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>System Notifikasi Live</h1>
+        <p>Klik tombol di bawah ini untuk menampilan Notifikasi</p>
+
+        <div class="btn-group">
+            <button id="btnSukses">Kirim data berhasil (sukses)</button>
+            <button id="btnGagal">Hapus data gagal</button>
+            <button id="btnInfo">Informasi System</button>
+        </div>
+
+        <!-- kotak toast melayani -->
+        <div class="toast-box">
+            <span id="toast-text">Pesan notifikasi akan muncul disini</span>
+            <div id="toastProgress"></div>
+        </div>
+    </div>
+
+</body>
+</html>

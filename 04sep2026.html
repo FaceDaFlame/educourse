@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // class Siswa {
+    //     constructor(nama, nilai, jurusan) {
+    //         this.nama = nama;
+    //         this.nilai = nilai;
+    //     }
+
+    // getGrade() {
+    //     switch (true) {
+    //         case this.nilai >= 80:
+    //             return "A (lulus)";
+    //         case this.nilai >= 70:
+    //             return "B (lulus)";
+    //         default:
+    //             return "C (remidi)";
+    //     }
+    // }
+
+    // }
+
+    // const KelasRp1 = [
+    //     new Siswa("Ahmad", 90),
+    //     new Siswa("Budi", 75,),
+    //     new Siswa("Citra", 65,),
+    //     new Siswa("Dewi", -10,),
+    // ];
+
+    // function olahNilaiKelas(daftarSiswa) {
+    //     console.log("Daftar Nilai Siswa:");
+
+    //     try {
+    //         for (let siswa of daftarSiswa) {
+    //             if (siswa.nilai < 0) {
+    //                 throw new Error(`Nilai untuk ${siswa.nama} tidak boleh minus`);
+    //             }
+    //             console.log(`nama: ${siswa.nama}, nilai: ${siswa.nilai}, grade: ${siswa.getGrade()}`);
+    //         }
+    //     } catch (error) {
+    //         console.error(`Terjadi error: ${error.message}`);
+    //     } finally {
+    //         console.log("Proses olah nilai selesai.");
+    //     }
+
+    // }
+
+    class kucing {
+        constructor(nama, suara) {
+            this.nama = nama;
+            this.suara = suara;
+        }
+
+        bersuara() {
+            console.log(`Kucing bernama ${this.nama} dengan suara ${this.suara}`);
+        }
+    }
+
+    let kucingA = new kucing("mimi", "meow");
+    
+    kucingA.bersuara();
+
+    </script>
+</body>
+</html>

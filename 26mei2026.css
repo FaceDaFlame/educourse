@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/* background halaman */
+body {
+  background-color: #e0d5c5;
+  font-family: Arial, sans-serif;
+  color: #333333;
+}
+
+/* tiap section */
+section {
+  background-color: #ffffff;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* pembungkus utama */
+div {
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+/* judul h1 */
+h1 {
+  color: #7a6a50;
+  text-align: center;
+}
+
+/* judul h2 */
+h2 {
+  color: #7a6a50;
+  border-bottom: 2px solid #e0d5c5;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* judul h3 */
+h3 {
+  color: #7a6a50;
+}
+
+h3 u {
+    text-decoration: none;
+}
+
+/* tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background-color: #e8dfc8;
+  padding: 8px;
+}
+
+td {
+  padding: 8px;
+  background-color: #faf7f2;
+}
+
+/* garis pemisah */
+hr {
+  border: none;
+  border-top: 10px solid #e0d5c5;
+  background-color: #e0d5c5;
+  margin: 12px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7a6a50;
+  color: #ffffff;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.menu-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.menu-links a:hover {
+  color: burlywood;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #7a6a50;
+    margin-top: 20px;
+}

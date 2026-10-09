@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Fundamentals</title>
+<style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+  }
+
+  header {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  header p {
+    font-size: 14px;
+    color: #b3b3b3;
+  }
+
+  .grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: #181818;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-number {
+    display: inline-block;
+    background-color: #1DB954;
+    color: #000000;
+    font-weight: bold;
+    font-size: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+    margin-bottom: 12px;
+  }
+
+  .card h2 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 13px;
+    color: #b3b3b3;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+
+  .card a {
+    display: inline-block;
+    text-align: center;
+    background-color: #1DB954;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .card a:hover {
+    background-color: #17a34a;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Katalog Karya</h1>
+  <p>Rangkuman latihan JavaScript Fundamentals</p>
+</header>
+
+<div class="grid">
+
+  <div class="card">
+    <span class="card-number">1</span>
+    <h2>JS Introduction</h2>
+    <p>Latihan dasar mengenal JavaScript: mengubah isi teks lewat <code>innerHTML</code>, memakai <code>document.getElementById</code>, serta menampilkan tulisan ke halaman dengan <code>document.write</code>.</p>
+    <a href="21jul2026.html">Buka Karya →</a>
+  </div>
+
+  <div class="card">
+    <span class="card-number">2</span>
+    <h2>Kalkulator & Warna Teks</h2>
+    <p>Kalkulator perkalian dua kotak yang otomatis terhitung lewat <code>oninput</code>, dipadukan dengan contoh mengubah warna teks dan menyembunyikan/menampilkan elemen lewat <code>style</code>.</p>
+    <a href="28jul2026.html">Buka Karya →</a>
+  </div>
+
+  <div class="card">
+    <span class="card-number">3</span>
+    <h2>Challenge: Ganti Gambar</h2>
+    <p>Latihan mengubah atribut <code>src</code> gambar secara dinamis lewat tombol, serta latihan tambahan memakai <code>console.log</code> dan <code>alert</code>.</p>
+    <a href="challenge.html">Buka Karya →</a>
+  </div>
+
+  <div class="card">
+    <span class="card-number">4</span>
+    <h2>Kalkulator Angka Penuh</h2>
+    <p>Kalkulator dengan tombol angka 0-9 dan operator matematika, ditata rapi pakai CSS grid, dan menggunakan fungsi <code>eval()</code> untuk menghitung hasil ekspresi.</p>
+    <a href="kalkulatorjs.html">Buka Karya →</a>
+  </div>
+
+  <div class="card">
+    <span class="card-number">5</span>
+    <h2>MP3 Music Player</h2>
+    <p>Pemutar musik bergaya Spotify dengan audio asli (elemen <code>&lt;audio&gt;</code>), progress bar interaktif, tombol next/prev/loop/like, dan playlist 2 lagu.</p>
+    <a href="UISpotify.html">Buka Karya →</a>
+  </div>
+  
+  <div class="card">
+    <span class="card-number">6</span>
+    <h2>Function</h2>
+    <p>Latihan fungsi dengan satu atau lebih parameter, fungsi yang mengembalikan nilai lewat return, serta memicu fungsi lewat tombol <code>onclick</code> dan <code>alert()</code>.</p>
+    <a href="7agu2026.html">Buka Karya →</a>
+  </div>
+  
+  <div class="card">
+    <span class="card-number">7</span>
+    <h2>Method & Array</h2>
+    <p>Latihan method string <code>toUpperCase()</code>, <code>toLowerCase()</code>, dan <code>trim()</code> untuk mengubah kapitalisasi dan merapikan teks, serta method array untuk menambah/menghapus data (push, pop, unshift, shift, splice) dan mencari data (includes, find).</p>
+    <a href="14agu2026.html">Buka Karya →</a>
+  </div>
+
+</div>
+
+</body>
+</html>

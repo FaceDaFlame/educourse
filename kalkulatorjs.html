@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: #f0f0f0;
+        font-family: arial, sans-serif;
+    }
+
+    .calculator {
+        width: 320px;
+        border: 2px solid #000000;
+        padding: 10px;
+        background-color: white;
+    }
+
+    .layar-row {
+        display: flex;
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+
+    #layar {
+        flex: 1;
+        height: 50px;
+        font-size: 20px;
+        text-align: right;
+        padding: 0px 5px;
+        border: 1px solid #000000;
+    }
+
+    .btn-c {
+        width: 60px;
+        background-color: #1DB954;
+        border: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 0px;
+    }
+
+    .tombol {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .tombol button {
+        height: 55px;
+        background-color: #1DB954;
+        color: white;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .tombol button:hover {
+        background-color: #17a34a;
+    }
+
+    .btn-c:hover {
+        background-color: #17a34a;
+    }
+
+</style>
+<body>
+
+<div class="calculator">
+    <div class="layar-row">
+        <input type="text" id="layar" readonly>
+        <button class="btn-c" onclick="hapussemua()">C</button>
+    </div>
+
+    <div class="tombol">
+        <button onclick="tambahKarakter('1')">1</button>
+        <button onclick="tambahKarakter('2')">2</button>
+        <button onclick="tambahKarakter('3')">3</button>
+        <button onclick="tambahKarakter('/')">/</button>
+
+        <button onclick="tambahKarakter('4')">4</button>
+        <button onclick="tambahKarakter('5')">5</button>
+        <button onclick="tambahKarakter('6')">6</button>
+        <button onclick="tambahKarakter('*')">*</button>
+
+        <button onclick="tambahKarakter('7')">7</button>
+        <button onclick="tambahKarakter('8')">8</button>
+        <button onclick="tambahKarakter('9')">9</button>
+        <button onclick="tambahKarakter('-')">-</button>
+
+        <button onclick="tambahKarakter('0')">0</button>
+        <button onclick="tambahKarakter('.')">.</button>
+        <button onclick="hitung()">=</button>
+        <button onclick="tambahKarakter('+')">+</button>
+    </div>
+</div>
+<script>
+
+    var layar = document.getElementById("layar")
+
+    function tambahKarakter(karakter) {
+        layar.value = layar.value + karakter
+    }
+
+    function hapussemua() {
+        layar.value = ("")
+    }
+
+    function hitung() {
+        var ekspresi = layar.value;
+        var hasil = eval(ekspresi);
+        layar.value = hasil;
+    }
+    
+</script>
+</body>
+</html>
