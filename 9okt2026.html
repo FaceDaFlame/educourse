@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- IMPORT 3 QUERY -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         
         body {
@@ -77,7 +79,16 @@
             overflow: hidden;
         }
 
-        
+        /* loading waktu mundur */
+        #toastProgress {
+            position: 0;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #333333;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -93,11 +104,76 @@
         </div>
 
         <!-- kotak toast melayani -->
-        <div class="toast-box">
-            <span id="toast-text">Pesan notifikasi akan muncul disini</span>
+        <div class="toast-box" id="myToast">
+            <span id="toastText">Pesan notifikasi akan muncul disini</span>
             <div id="toastProgress"></div>
         </div>
     </div>
+
+    <script>
+
+        $(document).ready(function(){
+            $("#btnSukses").click(function(){
+                $("#myToast")
+                .css("background-color", "#55d40c")
+                .stop(true,true)
+                .fadeIn(300)
+                .delay(2000)
+                .fadeOut(300);
+            $("#toastText").text("Berhasil..!! data kamu telah tersimpan");
+            });
+
+            $("#btnGagal").click(function(){
+                $("#myToast")
+                .css("background-color", "#55d40c")
+                .stop(true,true)
+                .fadeIn(300)
+                .delay(2000)
+                .fadeOut(300);
+            $("#toastText").text("Gagal... Coba lagi");
+            });
+
+            $("#btnInfo").click(function(){
+                $("#myToast")
+                .css("background-color", "#55d40c")
+                .stop(true,true)
+                .fadeIn(300)
+                .delay(2000)
+                .fadeOut(300);
+            $("#toastText").text("Sistem sedang dalam pemeliharaan");
+            });
+        });
+
+
+        $(document).ready(function(){
+            function tampilkanToast(pesan, warna, durasi){
+                durasi = durasi || 2000;
+
+                $("myToast").css("background-colour", warna)
+                $("toastText").text(pesan)
+
+                $("#toastProgress").stop(true,true).css("width", "100%")
+
+                $("#myToast").stop(true,true).fadeIn(300, function(){
+                    $("#toastProgress").animate({width:"0%"}, durasi, "linear", function(){
+                        $("#myToast").fadeOut(300)
+                    })
+                })
+            }
+
+            $("#btnSukses").click(function(){
+                tampilkanToast()
+            })
+
+            $("#btnGagal").click(function(){
+                tampilkanToast()
+            })
+
+            $("#btnInfo").click(function(){
+                tampilkanToast()
+            })
+        })
+    </script>
 
 </body>
 </html>
