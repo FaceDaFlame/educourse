@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+ 
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fff4f4;
+            background-image: linear-gradient(160deg, #fff4f4 0%, #ffe3ec 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            padding: 30px 16px;
+            box-sizing: border-box;
+            text-align: center;
+            color: #3b2a30;
+        }
+ 
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(214, 51, 108, 0.15);
+            border-top: 6px solid palevioletred;
+        }
+ 
+        h2 {
+            color: #d6336c;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+ 
+        #searchBox {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border: 2px solid #f1d5de;
+            border-radius: 999px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+            background-color: #fffafb;
+            transition: 0.2s;
+        }
+ 
+        #searchBox::placeholder {
+            color: #b9a1a9;
+        }
+ 
+        #searchBox:focus {
+            border-color: palevioletred;
+            box-shadow: 0 0 0 4px rgba(219, 112, 147, 0.2);
+            outline: none;
+        }
+ 
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            max-height: 460px;
+            overflow-y: auto;
+            padding: 4px 8px 4px 2px;
+            scrollbar-width: thin;
+            scrollbar-color: palevioletred #fff0f5;
+        }
+ 
+        .product-list::-webkit-scrollbar {
+            width: 8px;
+        }
+ 
+        .product-list::-webkit-scrollbar-track {
+            background: #fff0f5;
+            border-radius: 10px;
+        }
+ 
+        .product-list::-webkit-scrollbar-thumb {
+            background: palevioletred;
+            border-radius: 10px;
+        }
+ 
+        .product-item {
+            padding: 12px 15px;
+            background-color: #fff0f5;
+            border: 1px solid #f3cfdc;
+            border-left: 6px solid palevioletred;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #3b2a30;
+            cursor: pointer;
+            transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s;
+        }
+ 
+        .product-item:hover {
+            background-color: papayawhip;
+            color: black;
+            transform: translateX(4px);
+            box-shadow: 0 4px 10px rgba(219, 112, 147, 0.25);
+        }
+ 
+        #pesanKosong {
+            text-align: center;
+            padding: 14px;
+            background-color: #fff1f1;
+            border: 1px dashed #e57373;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+ 
+        .hero-image {
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 14px;
+            object-fit: cover;
+        }
+ 
+        /* sembunyikan gambar selama src masih kosong */
+        .hero-image[src=""] {
+            display: none;
+        }
+ 
+        @media (max-width: 480px) {
+            body { padding: 16px 10px; }
+            .container { padding: 18px; }
+            h2 { font-size: 20px; }
+            .product-list { max-height: 420px; }
+        }
+ 
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+        }
+ 
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Cari Produk di Parjo Mulawarman</h2>
+ 
+        <img src="" alt="" width="100%" class="hero-image">
+ 
+        <input type="text" id="searchBox" placeholder="ketikan nama produk">
+ 
+        <!-- daftar produk -->
+        <div class="product-list">
+            <div class="product-item" data-nama="Kopi Hitam">Kopi Hitam - Rp.10.000</div>
+            <!-- tambahkan 9 produk lain -->
+            <div class="product-item" data-nama="Nasi Ayam">Nasi Ayam - Rp12.000</div>
+            <div class="product-item" data-nama="Nasi Kuning">Nasi Kuning - Rp10.000</div>
+            <div class="product-item" data-nama="Es Teh">Es Teh - Rp5.000</div>
+            <div class="product-item" data-nama="Es Kopi">Es Kopi - Rp7.000</div>
+            <div class="product-item" data-nama="Nasi Rames">Nasi Rames - Rp11.000</div>
+            <div class="product-item" data-nama="Es Susu">Es Susu - Rp6.000</div>
+            <div class="product-item" data-nama="Nasi Telur">Nasi Telur - Rp13.000</div>
+            <div class="product-item" data-nama="Es Pisang Ijo">Es Pisang Ijo - Rp8.000</div>
+            <div class="product-item" data-nama="Es Coklat">Es Coklat - Rp15.000</div>
+            <!-- produk tambahan (11 - 40) -->
+            <div class="product-item" data-nama="Nasi Goreng">Nasi Goreng - Rp14.000</div>
+            <div class="product-item" data-nama="Mie Goreng">Mie Goreng - Rp12.000</div>
+            <div class="product-item" data-nama="Mie Rebus">Mie Rebus - Rp11.000</div>
+            <div class="product-item" data-nama="Soto Ayam">Soto Ayam - Rp13.000</div>
+            <div class="product-item" data-nama="Bakso">Bakso - Rp15.000</div>
+            <div class="product-item" data-nama="Ayam Geprek">Ayam Geprek - Rp14.000</div>
+            <div class="product-item" data-nama="Ayam Bakar">Ayam Bakar - Rp16.000</div>
+            <div class="product-item" data-nama="Nasi Pecel">Nasi Pecel - Rp10.000</div>
+            <div class="product-item" data-nama="Nasi Uduk">Nasi Uduk - Rp11.000</div>
+            <div class="product-item" data-nama="Gado-Gado">Gado-Gado - Rp12.000</div>
+            <div class="product-item" data-nama="Lontong Sayur">Lontong Sayur - Rp9.000</div>
+            <div class="product-item" data-nama="Bubur Ayam">Bubur Ayam - Rp10.000</div>
+            <div class="product-item" data-nama="Roti Bakar">Roti Bakar - Rp8.000</div>
+            <div class="product-item" data-nama="Pisang Goreng">Pisang Goreng - Rp5.000</div>
+            <div class="product-item" data-nama="Tahu Isi">Tahu Isi - Rp3.000</div>
+            <div class="product-item" data-nama="Tempe Mendoan">Tempe Mendoan - Rp4.000</div>
+            <div class="product-item" data-nama="Es Jeruk">Es Jeruk - Rp6.000</div>
+            <div class="product-item" data-nama="Jeruk Hangat">Jeruk Hangat - Rp5.000</div>
+            <div class="product-item" data-nama="Teh Hangat">Teh Hangat - Rp4.000</div>
+            <div class="product-item" data-nama="Teh Tarik">Teh Tarik - Rp8.000</div>
+            <div class="product-item" data-nama="Kopi Susu">Kopi Susu - Rp9.000</div>
+            <div class="product-item" data-nama="Kopi Tubruk">Kopi Tubruk - Rp8.000</div>
+            <div class="product-item" data-nama="Cappuccino">Cappuccino - Rp12.000</div>
+            <div class="product-item" data-nama="Es Alpukat">Es Alpukat - Rp12.000</div>
+            <div class="product-item" data-nama="Jus Mangga">Jus Mangga - Rp10.000</div>
+            <div class="product-item" data-nama="Jus Jambu">Jus Jambu - Rp10.000</div>
+            <div class="product-item" data-nama="Es Cendol">Es Cendol - Rp9.000</div>
+            <div class="product-item" data-nama="Es Campur">Es Campur - Rp11.000</div>
+            <div class="product-item" data-nama="Wedang Jahe">Wedang Jahe - Rp6.000</div>
+            <div class="product-item" data-nama="Air Mineral">Air Mineral - Rp3.000</div>
+            <div id="pesanKosong" style="color: red; display: none;">Maaf, Produk tidak tersedia</div>
+        </div>
+    </div>
+ 
+    <script>
+        $(document).ready(function(){
+            console.log("ready")
+            //keyup = sensor di kotak input
+            $("#searchBox").keyup(function(){
+                //1. ambil data yang diketik, ubah jadi kecil
+                var keyword = $(this).val().toLowerCase();
+                var jumlahTampil = 0;
+ 
+                //2. cek setiap item produk
+                $(".product-item").each(function(){
+                    var namaProduk = $(this).data("nama").toLowerCase();
+ 
+                    if (namaProduk.includes(keyword)){
+                        $(this).show(); //tampilkan jika cocok
+                        jumlahTampil++;
+                    } else {
+                        $(this).hide(); //jika tidak cocok maka sembunyikan
+                    }
+                });
+ 
+                //jika tidak ada produk yang dicari maka
+                if (jumlahTampil === 0) {
+                    $("#pesanKosong").show();
+                } else {
+                    $("#pesanKosong").hide();
+                }
+            });
+        });
+    </script>
+ 
+</body>
+</html>
