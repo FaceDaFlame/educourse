@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps Detection Simple</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <!-- <script defer></script> -->
+    <style>
+
+        body {
+            background-color: beige;
+            font-family: Arial;
+            margin: 0;
+            padding: 36px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #7bd8d6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .status-box {
+            margin-top: 20px;
+            padding: 10px;
+            background: #ecd476;
+            border-radius: 10px;
+            text-align: left;
+            border: 1px solid;
+        }
+
+        #map {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border: 1px solid #bdb9b9;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Mencari Lokasiku</h2>
+        <p>Tekan tombol di bawah ini</p>
+
+        <button id="btnGPS">Cari posisi sekarang</button>
+        <div class="status-box" id="infoStatus">
+            Status : <b>Belum Aktif</b><br>
+            Latitude/longtitude :
+        </div>
+
+        <div id="map"></div>
+
+    </div>
+
+    <script>
+
+        //1. Membuat peta awal
+        let map = L.map('map').setView([-6.1751, 106.8650], 13); //koordinat awal (Jakarta)
+
+        //Mengambil gambar peta dari OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        //buat variabel untuk menampung pin letak awal
+        let User = null;
+
+        //fungsi button pada tombol GPS
+        document.getElementById('btnGPS').addEventListener('click', function() {
+            if (!navigator.geolocation){
+                alert("web kamu tidak bisa akses GPS!");
+                return;
+            }
+
+            document.getElementById('infoStatus').innerHTML="Status:Sedang mencari titik lokasi";
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+
+            //menghindari pin double
+            if (User) {
+                map.removeLayer(User);
+            }
+
+            //view kamera peta bisa otomatis
+            map.setView([lat,lng], 13);
+
+            //pasang pin baru di titik lokasimu
+            User = L.marker([lat,lng]).addTo(map);
+            User.bindPopup("Ini lokasi kamu").openPopup();
+        }, function(error) {
+            alert("masih gagal! coba pastikan akses lokasi aktif");
+            document.getElementById('infoStatus').innerHTML="GPS";
+        });
+    })
+    </script>
+
+</body>
+</html>
